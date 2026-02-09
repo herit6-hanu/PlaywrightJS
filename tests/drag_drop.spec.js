@@ -5,10 +5,11 @@ test.describe('Drag and Drop Suite', () => {
         await page.goto('https://seleniumbase.io/other/drag_and_drop')
     })
     test('Perform Drag and Drop Action', async ({ page }) => {
-        await page.locator('//img');
-        await page.locator('#droppable').hover();
-        await p
-        await source.dragTo(target);
+        await page.locator('//img').hover();
+        await page.mouse.down();
+        await page.locator('//*[@ondrop="drop(event)"]').first().hover();
+        await page.mouse.up();
         await page.screenshot({ path: 'screenshots/draganddrop.png' })
+        await page.pause();
     })
 })
