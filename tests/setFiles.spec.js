@@ -10,5 +10,4 @@ test('set files test', async ({page})=>{
 
     await page.locator('//*[@name="file_upload"]').last().setInputFiles('c:\\Users\\MH121039\\Downloads\\Hanumantha TestEngineer Resume.pdf');
     await page.pause();
-    await page.waitForFunction();
 }) 
